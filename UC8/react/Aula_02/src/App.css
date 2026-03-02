@@ -1,0 +1,119 @@
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  background: var(--card);
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.status-salvamento {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.status-salvamento.visivel { opacity: 1; }
+
+/* Progresso */
+.progresso-section { margin-bottom: 1.5rem; }
+.progresso-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--text-light);
+}
+.barra-progresso {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.preenchimento {
+  height: 100%;
+  background: var(--success);
+  transition: width 0.4s ease;
+}
+
+/* Lista */
+ul { list-style: none; padding: 0; }
+li {
+  background: #f1f5f9;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.tarefa-texto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex: 1;
+}
+
+li.concluida {
+  opacity: 0.6;
+  text-decoration: line-through;
+  background: #f8fafc;
+}
+
+/* Botões */
+.btn-limpar {
+  width: 100%;
+  margin-top: 1rem;
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-limpar.confirmar {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+  font-weight: bold;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--text-light);
+}
